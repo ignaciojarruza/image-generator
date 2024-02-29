@@ -12,11 +12,14 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", async (req, res) => {
-  const completion = await openai.chat.completions.create({
-    messages: [{ role: "system", content: "Hello World" }],
-    model: "gpt-3.5-turbo",
+  const completion = await openai.images.generate({
+    model: "dall-e-3",
+    prompt: "elephant",
+    size: "1024x1024",
+    quality: "standard",
+    n: 1,
   });
-  res.json({ completion: completion.choices[0] });
+  res.json({ image_url: completion.data[0].url });
 });
 
 app.listen(port, () =>
