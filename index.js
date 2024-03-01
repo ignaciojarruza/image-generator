@@ -11,7 +11,10 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get("/", async (req, res) => {
+app.get("/", (req, res) => {
+  res.json("Hello world!");
+});
+app.get("/test-image-generation", async (req, res) => {
   const completion = await openai.images.generate({
     model: "dall-e-3",
     prompt: "elephant",
@@ -20,6 +23,10 @@ app.get("/", async (req, res) => {
     n: 1,
   });
   res.json({ image_url: completion.data[0].url });
+});
+
+app.get("/generate/:image_description", (req, res) => {
+  res.send(`Image_description: ${req.params.image_description}`);
 });
 
 app.listen(port, () =>
