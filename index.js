@@ -25,8 +25,15 @@ app.get("/test-image-generation", async (req, res) => {
   res.json({ image_url: completion.data[0].url });
 });
 
-app.get("/generate/:image_description", (req, res) => {
-  res.send(`Image_description: ${req.params.image_description}`);
+app.get("/generate/:image_description", async (req, res) => {
+  const generate = await openai.images.generate({
+    model: "dall-e-3",
+    prompt: req.params.image_description,
+    size: "1024x1024",
+    quality: "standard",
+    n: 1,
+  });
+  res.json({ image_url: generate.data[0].url });
 });
 
 app.listen(port, () =>
