@@ -16,15 +16,38 @@ The application facilitates image generation by accepting prompts from users and
 
 1. Clone this repository to your local machine:
 
+   ```
+   git clone https://github.com/ignaciojarruza/image-generator.git
+   ```
+
 2. Navigate to the project directory:
 
+   ```
+   cd image-generator
+   ```
+
 3. Install dependencies:
+
+   ```
+   npm install
+   ```
 
 4. Obtain your OpenAI API key specifically for Dal-E-3 model usage. You can acquire the API key from the OpenAI website (https://openai.com/). Once obtained, create a `.env` file in the root directory of the project and add the following:
    Replace `your_openai_api_key` with your actual API key.
 
+   ```
+   OPENAI_API_KEY=your_openai_api_key
+   ```
+
 5. Start the server:
+   ```
+   npm start
+   ```
 
 ## Usage
 
 Interact with the application through its RESTful API endpoints to generate images using Dal-E-3. Below is how you can use the endpoints:
+
+```
+
+```
