@@ -25,11 +25,11 @@ app.get("/test-image-generation", async (req, res) => {
   res.json({ image_url: completion.data[0].url });
 });
 
-app.post("/generate/:image_description", async (req, res) => {
+app.post("/generate", async (req, res) => {
   const { image_description } = req.body;
   const generate = await openai.images.generate({
     model: "dall-e-3",
-    prompt: req.params.image_description,
+    prompt: image_description,
     size: "1024x1024",
     quality: "standard",
     n: 1,
