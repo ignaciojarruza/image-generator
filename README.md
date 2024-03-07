@@ -48,6 +48,23 @@ The application facilitates image generation by accepting prompts from users and
 
 Interact with the application through its RESTful API endpoints to generate images using Dal-E-3. Below is how you can use the endpoints:
 
+1. Generate Image
+
+- Endpoint: `/generate`
+- Method: POST
+- Description: Generate an image using the Dal-E-3 model.
+- Request Body:
+- - `prompt`: The prompt to generate an image.
+- - `image_size`: [soon to be added] Size of the generated image. Defaults to `1024`
+- - `num_images`: [soon to be added] Number of images to generate. Defaults to `1`.
+- Example Request:
+
+```
+curl -X POST -H "Content-Type: application/json" -d '{"image_description": "apples"}' http://localhost:3000/generate
 ```
 
+- Example Response:
+
+```
+{"image_url":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Uaxtgmryqqal9vH8iE7EHDal/user-qXODqm6V8lyvtG2m3dg92bc8/img-Cjg4KoLfTcRrkROLb07M6cCK.png?st=2024-03-07T18%3A00%3A59Z&se=2024-03-07T20%3A00%3A59Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-03-07T18%3A12%3A23Z&ske=2024-03-08T18%3A12%3A23Z&sks=b&skv=2021-08-06&sig=dYftWv3I586HB8%2BI%2BF8psPE6OJHBFnEw1mshMYZGFd4%3D"}
 ```
