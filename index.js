@@ -26,13 +26,14 @@ app.get("/test-image-generation", async (req, res) => {
 });
 
 app.post("/generate", async (req, res) => {
-  const { image_description } = req.body;
+  const { image_description, size, style } = req.body;
   const generate = await openai.images.generate({
     model: "dall-e-3",
     prompt: image_description,
-    size: "1024x1024",
+    size: size,
     quality: "standard",
     n: 1,
+    style: style,
   });
   res.json({ image_url: generate.data[0].url });
 });
