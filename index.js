@@ -26,9 +26,9 @@ app.get("/test-image-generation", async (req, res) => {
 });
 
 app.post("/generate", async (req, res) => {
-  const { image_description, size, style } = req.body;
+  const { image_description, size, style, model } = req.body;
   const generate = await openai.images.generate({
-    model: "dall-e-3",
+    model: model,
     prompt: image_description,
     size: size,
     quality: "standard",

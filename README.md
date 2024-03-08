@@ -60,11 +60,11 @@ Interact with the application through its RESTful API endpoints to generate imag
 - Example Request:
 
 ```
-curl -X POST -H "Content-Type: application/json" -d '{"image_description": "anime studying to lo fi beats", "size":"1024x1024", "style":"natural"}' http://localhost:3000/generate
+curl -X POST -H "Content-Type: application/json" -d '{"image_description": "anime studying to lo fi beats", "size":"1024x1024", "style":"natural", "model":"dall-e-2"}' http://localhost:3000/generate
 ```
 
 - Example Response:
 
 ```
-{"image_url":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Uaxtgmryqqal9vH8iE7EHDal/user-qXODqm6V8lyvtG2m3dg92bc8/img-lf4DlI9Y34STiCxKFybIXP16.png?st=2024-03-08T13%3A48%3A04Z&se=2024-03-08T15%3A48%3A04Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-03-07T18%3A12%3A41Z&ske=2024-03-08T18%3A12%3A41Z&sks=b&skv=2021-08-06&sig=7ttrgUnrQJq1APCmXwvDIoKFG7bpo5quFyQfGSSC2vY%3D"}
+{"image_url":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Uaxtgmryqqal9vH8iE7EHDal/user-qXODqm6V8lyvtG2m3dg92bc8/img-gCfg36om6eIhBWXan1BWlppB.png?st=2024-03-08T13%3A55%3A40Z&se=2024-03-08T15%3A55%3A40Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-03-07T18%3A05%3A44Z&ske=2024-03-08T18%3A05%3A44Z&sks=b&skv=2021-08-06&sig=Wt0Mkak9KC8Pa1IvMB/LTT/PSF0HvThDis2Vmnv1Z1g%3D"}
 ```
