@@ -54,9 +54,10 @@ Interact with the application through its RESTful API endpoints to generate imag
 - Method: POST
 - Description: Generate an image using the Dal-E-3 model.
 - Request Body:
-- - `prompt`: The prompt to generate an image.
-- - `image_size`: [soon to be added] Size of the generated image. Defaults to `1024`
-- - `num_images`: [soon to be added] Number of images to generate. Defaults to `1`.
+  - `image_description`: The prompt to generate an image.
+  - `size`: Size of the generated image. Defaults to `1024`
+  - `model`: The OpenAI Model to use in image generation. `dall-e-3` or `dall-e-2` are commonly used models.
+  - `style`: The style of image generation model will use. `Vivid` or ``.
 - Example Request:
 
 ```

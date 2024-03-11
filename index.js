@@ -12,17 +12,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json("Hello world!");
-});
-app.get("/test-image-generation", async (req, res) => {
-  const completion = await openai.images.generate({
-    model: "dall-e-3",
-    prompt: "elephant",
-    size: "1024x1024",
-    quality: "standard",
-    n: 1,
-  });
-  res.json({ image_url: completion.data[0].url });
+  res.json(
+    "Image Generator Node.js Backend. Use README.md for instructions on how to install/run."
+  );
 });
 
 app.post("/generate", async (req, res) => {
